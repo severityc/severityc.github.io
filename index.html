@@ -1,1 +1,101 @@
-hello world
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Meta information -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Severity</title>
+
+    <!-- Favicon and stylesheets -->
+    <link rel="icon" href="sources/link.png" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&amp;display=swap" rel="stylesheet" />
+
+    <!-- Inline styles -->
+    <style>
+        body {
+            overflow: hidden;
+            /* Hide scrollbars */
+        }
+
+        .social-links {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .social-link {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px 20px;
+            width: 120px; /* Fixed width */
+            height: 40px; /* Fixed height */
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.2); /* White with very low opacity */
+            color: white;
+            text-decoration: none;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            line-height: 40px;
+        }
+
+        .social-link:hover {
+            background-color: rgba(255, 255, 255, 0.3); /* Slightly increase opacity on hover */
+        }
+    </style>
+</head>
+
+<body onresize="resize()" onload="main()">
+    <!-- Background canvas for effects -->
+    <canvas id="canvas-background"></canvas>
+
+    <!-- Video overlay section -->
+    <video loop preload="auto" class="vidoverlay" id="video">
+        <source src="sources/motto.mp4" type="video/mp4" />
+    </video>
+
+    <!-- Checkbox and overlay for interaction -->
+    <input type="checkbox" autocomplete="off" id="overlay-toggle" />
+    <div class="overlay fullscreen">
+        <label for="overlay-toggle" onclick="videoPlay(); audioPlay();">
+            <span class="overlayno-hover hover" style="font-family: monospace; font-size: 1em"><b>CLICK TO ENTER</b></span>
+            <span class="overlayhover hover" style="font-family: monospace; font-size: 1em"><b>CLICK TO ENTER</b></span>
+        </label>
+    </div>
+
+    <!-- Content in the center -->
+    <div id="center" align="center">
+        <span>
+            <!-- Main heading and social links -->
+            <p class="hover graffiti" style="font-size: 100px">Severity</p>
+            <p class="hover">@severitylol</p>
+            <div class="social-links">
+                <a href="https://www.youtube.com/@severitycodes" target="_blank" class="social-link"><b>YouTube</b></a>
+                <a href="https://cash.app/$S3verity/" target="_blank" class="social-link"><b>Cashapp</b></a>
+                <a href="https://www.discord.com/invite/acronisware" target="_blank" class="social-link"><b>Discord</b></a>
+                <a href="https://github.com/severityc" target="_blank" class="social-link"><b>Github</b></a>
+            </div>
+        </span>
+    </div>
+
+    <!-- JavaScript functions -->
+    <script>
+        // Function to play video with adjusted volume
+        function videoPlay() {
+            var video = document.getElementById("video");
+            video.volume = 0.55;
+            video.play();
+        }
+
+        // Function to play audio with adjusted volume
+        function audioPlay() {
+            var audio = document.getElementById("audio");
+            audio.volume = 0;
+            audio.play();
+        }
+    </script>
+</body>
+
+</html>
